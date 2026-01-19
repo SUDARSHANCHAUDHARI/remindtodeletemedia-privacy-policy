@@ -92,25 +92,50 @@ RemindToDeleteMedia is built with **privacy and security as core principles**.
 
 ## 💾 Data Storage & Security
 
-**All data is stored locally on your device using:**
+### Local Storage
 
-- **Room Database**: Tracked folders and reminders
-- **DataStore**: App preferences
+**All your personal data is stored locally on your device using:**
+
+- **Room Database**: Encrypted local database for tracked folders and reminders
+- **DataStore**: Secure local storage for app preferences
 - **No Cloud Sync**: Your data never leaves your device
+- **No Backups**: Data is not backed up to cloud services
+
+### Security Measures
+
+- ✅ **Encryption**: All local data is encrypted using Android's built-in encryption
+- ✅ **No Network Transmission**: App data is never sent over the network
+- ✅ **Secure Storage**: Data stored in app's private directory
+- ✅ **Regular Updates**: Security patches and updates applied regularly
+
+### Data Retention
+
+- **Tracked Folders**: Retained until you remove them or uninstall the app
+- **Reminders**: Retained until completed, deleted, or app uninstall
+- **Preferences**: Retained until you change them or uninstall the app
+- **Uninstall**: All data is permanently deleted when you uninstall the app
 
 ---
 
 ## 🌐 Third-Party Services
 
-RemindToDeleteMedia **does not use third-party services** that collect your data:
+### No Third-Party Services
+
+RemindToDeleteMedia **does not use any third-party services** that collect or process your data:
 
 - ❌ No analytics services
 - ❌ No advertising networks
+- ❌ No cloud storage services
 - ❌ No crash reporting services
+- ❌ No user tracking services
+
+**Your data stays 100% on your device.**
 
 ---
 
 ## 🔐 Permissions Explained
+
+### Required Permissions
 
 | Permission | Purpose | Why Needed |
 |------------|---------|------------|
@@ -122,11 +147,167 @@ RemindToDeleteMedia **does not use third-party services** that collect your data
 
 **SAF folder picker**: When you pick a folder, Android grants the app access to that folder (where supported).
 
+### Privacy Controls
+
+- ✅ **Notification Control**: Enable/disable notifications anytime in Settings
+- ✅ **Data Deletion**: Remove tracked folders or clear all data anytime
+- ✅ **Exclude Folders**: Mark folders as "Keep Forever" to exclude from reminders
+- ✅ **Uninstall**: Uninstalling removes all local data permanently
+
 ---
 
-## 📄 Full Privacy Policy
+## 👤 Your Rights
+
+### Data Control
+
+- **View Your Data**: Access all tracked folders and reminders in the app
+- **Edit Your Data**: Modify reminder days, exclude folders, or remove tracking
+- **Delete Your Data**: Remove individual folders or clear all data (Settings)
+- **Uninstall**: Uninstalling removes all local data
+
+### GDPR Rights (EU Users)
+
+If you're in the European Union, you have additional rights:
+
+- ✅ **Right to Access**: View all your personal data
+- ✅ **Right to Rectification**: Edit inaccurate data
+- ✅ **Right to Erasure**: Delete your data at any time ("Right to be Forgotten")
+- ✅ **Right to Data Portability**: Request your data export (contact us)
+- ✅ **Right to Object**: Control how your data is used
+
+**How to Exercise Your Rights**:
+
+- Use the app's built-in features in Settings
+- Contact us directly at sudarshantechlabs@gmail.com
+- We will respond within 48 hours
+
+### CCPA Rights (California Users)
+
+If you're in California, you have additional rights under CCPA:
+
+- ✅ **Right to Know**: Know what personal information we collect
+- ✅ **Right to Delete**: Request deletion of your personal information
+- ✅ **Right to Opt-Out**: Opt-out of sale of personal information (we don't sell data)
+- ✅ **Right to Non-Discrimination**: We won't discriminate for exercising your rights
+
+---
+
+## 📱 App Information
+
+- **Package Name**: `com.sudarshantechlabs.remindtodeletemedia`
+- **Platform**: Android only
+- **Language**: Kotlin
+- **Architecture**: MVVM with Jetpack Compose
+- **Database**: Room (Local SQLite)
+
+---
+
+## 📄 Privacy Policy
 
 The complete, detailed privacy policy is available in [PRIVACY_POLICY.md](./PRIVACY_POLICY.md).
+
+**Key Sections:**
+
+- Information We Collect
+- How We Use Your Information
+- Data Storage & Retention
+- Data Sharing
+- Your Rights and Controls
+- Children's Privacy
+- Permissions Explained
+- Security Measures
+- GDPR Rights
+- Contact Information
+
+---
+
+## 🚨 Important Privacy Highlights
+
+### ✅ What We Do
+
+- Store all data locally on your device
+- Use encryption for local storage
+- Allow you to export or delete your data anytime
+- Work completely offline
+- Respect your privacy choices
+- Never share your data with third parties
+
+### ❌ What We DON'T Do
+
+- Store your data in the cloud
+- Share your data with third parties
+- Sell your data
+- Track you across apps or websites
+- Require user accounts
+- Collect location data
+- Access your contacts or other personal data
+- Use analytics or advertising
+- Send data to external servers
+
+---
+
+## 📞 Contact & Support
+
+### Privacy-Related Questions
+
+If you have questions about:
+
+- How we handle your data
+- Your privacy rights
+- Data deletion requests
+- GDPR compliance
+- Security concerns
+
+**Contact Us:**
+
+- **Email**: sudarshantechlabs@gmail.com
+- **Developer Email**: sunny.sudarshan@gmail.com
+- **Website**: https://sudarshantechlabs.com
+- **GitHub Issues**: [RemindToDeleteMedia Repository](https://github.com/SUDARSHANCHAUDHARI/RemindToDeleteMedia)
+
+### Response Time
+
+We aim to respond to privacy-related inquiries within **48 hours**.
+
+---
+
+## 🔄 Policy Updates
+
+We may update this privacy policy from time to time to reflect:
+
+- Changes in app features
+- Legal requirements
+- Best practices
+- User feedback
+
+**How We Notify You:**
+
+- In-app notifications for significant changes
+- App update release notes
+- Updated "Last updated" date in the policy
+
+**Last Updated**: January 2026
+
+---
+
+## 📚 Additional Resources
+
+- **Main App Repository**: [Source code and documentation](https://github.com/SUDARSHANCHAUDHARI/RemindToDeleteMedia)
+- **GDPR Information**: European privacy regulations
+- **CCPA Information**: California privacy regulations
+
+---
+
+## 🏢 About Sudarshan Tech Labs
+
+**RemindToDeleteMedia** is developed and published by **Sudarshan Tech Labs**.
+
+- **Company**: Sudarshan Tech Labs
+- **Website**: https://sudarshantechlabs.com
+- **Email**: sudarshantechlabs@gmail.com
+- **Developer**: Sudarshan Kishor Chaudhari
+- **Developer Email**: sunny.sudarshan@gmail.com
+- **GitHub**: @SUDARSHANCHAUDHARI
 
 ---
 
@@ -135,5 +316,31 @@ The complete, detailed privacy policy is available in [PRIVACY_POLICY.md](./PRIV
 This privacy policy repository is licensed under the **MIT License**.
 
 See [LICENSE](./LICENSE) file for details.
+
+---
+
+## ⭐ Quick Privacy Summary
+
+### 🔒 Your Data Stays Local
+
+**All your personal content (tracked folders, reminders, preferences) is stored on your device and never sent to any server.**
+
+| Feature | Privacy Status |
+|-------------------|----------------|
+| Tracked Folders | ✅ 100% Local |
+| Reminders | ✅ 100% Local |
+| App Preferences | ✅ 100% Local |
+| Notifications | ✅ Local Only |
+| Analytics | ❌ None |
+| Cloud Sync | ❌ None |
+| Third-Party Services | ❌ None |
+
+---
+
+**Made with ❤️ by Sudarshan Tech Labs**
+
+_Privacy is not a feature - it's a fundamental right._
+
+[View Full Privacy Policy](./PRIVACY_POLICY.md) | [Main App Repository](https://github.com/SUDARSHANCHAUDHARI/RemindToDeleteMedia)
 
 
