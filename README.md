@@ -1,108 +1,129 @@
-# Privacy Policy — RemindToDeleteMedia
+# RemindToDeleteMedia — Privacy Policy
 
 **Effective Date:** 2026-03-21
-**Company:** SudarshanTechLabs
-**Location:** Bangkok, Bangkok, TH
-**Contact:** sudarshantechlabs@gmail.com
+**Last Updated:** 2026-03-21
+**Version:** 1.0.0
+
+Published by **Sudarshan Tech Labs** | https://sudarshantechlabs.com | sudarshantechlabs@gmail.com
 
 ---
 
-## 1. Data Collection
-
-RemindToDeleteMedia **does not collect, store, or transmit any personal data** to external servers, third-party services, or the developer.
-
-The app operates entirely on your device. There are no analytics, no crash reporting services, no advertising SDKs, and no network requests of any kind.
+RemindToDeleteMedia helps you manage media files on your Android device by scheduling reminders to review and delete old photos and videos. All data is stored locally on your device. Sudarshan Tech Labs does not collect or transmit personal data.
 
 ---
 
-## 2. Data Stored on Your Device
+## Data Collection
 
-The app stores the following data **locally on your device only**:
+### Data Stored Locally on Your Device
 
-- **Folder identifiers** — the media folders you choose to track (stored as MediaStore relative paths or SAF tree URIs)
-- **Reminder configuration** — reminder interval (days or date), snooze state, "keep forever" flag
-- **Folder statistics** — media count and estimated storage size, calculated on-device when you open the app
-- **App preferences** — onboarding completion state, theme setting
+| Data | Purpose | Storage |
+|---|---|---|
+| Media reminder configurations (folder, file type, reminder date) | Core reminder functionality | Room database on your device |
+| App preferences | Personalisation | DataStore on your device |
 
-All of this data is stored using Android's standard local storage (Room database + DataStore Preferences). It never leaves your device.
+### Media File Access
 
----
-
-## 3. Data Use
-
-The data stored on your device is used solely to:
-
-- Schedule and display reminder notifications for folders you have configured
-- Show you folder statistics (media count, storage used)
-- Restore reminders after your device restarts
+RemindToDeleteMedia reads your media files (images and videos) to allow you to set reminders for specific folders or file types. Media file content is processed in-app only and is not stored permanently or transmitted externally. The App does not read, copy, or upload media file content.
 
 ---
 
-## 4. Media Access
+## How We Use Your Data
 
-The app requests permission to access photos and videos on your device (`READ_MEDIA_IMAGES`, `READ_MEDIA_VIDEO` on Android 13+, or `READ_EXTERNAL_STORAGE` on Android 12 and below).
-
-This access is used **only** to:
-- Detect available media folders
-- Calculate basic folder statistics (count and size)
-
-The app **never**:
-- Uploads, shares, or transmits your media to any server or service
-- Deletes any media file automatically
-- Modifies any media file
-
-You are always in full control of your media. Any deletion is performed manually by you in your gallery or file manager.
-
----
-
-## 5. Third-Party Services
-
-RemindToDeleteMedia does **not** integrate with any third-party services, including:
-
-- Analytics platforms (e.g., Firebase Analytics, Mixpanel)
-- Advertising networks
-- Crash reporting services (e.g., Crashlytics)
-- Social login providers
-- Cloud storage services
-
----
-
-## 6. Permissions
-
-| Permission | Purpose |
+| Purpose | Data Used |
 |---|---|
-| `READ_MEDIA_IMAGES` / `READ_MEDIA_VIDEO` (Android 13+) | Scan media folders and calculate stats |
-| `READ_EXTERNAL_STORAGE` (Android ≤ 12, maxSdkVersion 32) | Scan media folders and calculate stats |
-| `POST_NOTIFICATIONS` | Send reminder notifications when a folder review is due |
-| `RECEIVE_BOOT_COMPLETED` | Restore scheduled reminders after device reboot |
-| SAF folder access (user-granted) | Access a custom folder selected by you via the system file picker |
-
-No permission is used for any purpose beyond what is listed above.
+| Display media files for reminder setup | Read media metadata (not content) at runtime |
+| Schedule and deliver reminder notifications | Local reminder configurations |
+| Run background reminder checks | Local WorkManager tasks |
 
 ---
 
-## 7. Security
+## Data Storage and Security
 
-Because RemindToDeleteMedia stores all data locally and transmits nothing over the network, there is no data-in-transit exposure. Local storage is protected by Android's standard app sandboxing.
+- **Reminder data:** Stored in a Room database in the App's private directory
+- **No cloud storage:** Sudarshan Tech Labs operates no backend server
+- **No media upload:** The App never reads, copies, or uploads your photos or videos to any server
+- **Android sandbox:** All data is protected by Android's application isolation
 
----
+## Data Retention
 
-## 8. Children's Privacy
-
-RemindToDeleteMedia does not collect personal information from anyone, including children under the age of 13. The app contains no content directed at children.
-
----
-
-## 9. Changes to This Policy
-
-If this privacy policy changes in a future version of the app, the updated policy will be published at the same URL with an updated effective date. Continued use of the app after a policy change constitutes acceptance of the new policy.
+| Data | Retention |
+|---|---|
+| All local reminder data | Until you delete it or uninstall the App |
 
 ---
 
-## 10. Contact Us
+## Data Sharing
 
-If you have any questions about this privacy policy, please contact:
+We do not collect, sell, or share your data or any media file content.
 
-**SudarshanTechLabs**
-Bangkok, Bangkok, Thailand
-Email: sudarshantechlabs@gmail.com
+---
+
+## Background Services
+
+RemindToDeleteMedia uses a foreground service (`FOREGROUND_SERVICE_DATA_SYNC`) to check for due reminders in the background. A persistent notification is visible while the service runs.
+
+---
+
+## Permissions Explained
+
+| Permission | Why It Is Needed |
+|---|---|
+| `POST_NOTIFICATIONS` | Deliver media deletion reminder notifications |
+| `RECEIVE_BOOT_COMPLETED` | Reschedule reminders after device restart |
+| `READ_MEDIA_IMAGES` | Read image file metadata to set reminders for photos |
+| `READ_MEDIA_VIDEO` | Read video file metadata to set reminders for videos |
+
+---
+
+## Your Rights and Controls
+
+- **Delete individual reminders:** Use the delete function in the App
+- **Delete all data:** Uninstall or go to Android Settings > Apps > RemindToDeleteMedia > Storage > Clear Data
+
+---
+
+## Children's Privacy
+
+RemindToDeleteMedia is not directed at children under 13. We do not collect personal information.
+
+---
+
+## Changes to This Policy
+
+We may update this Privacy Policy from time to time. We will notify you of significant changes via:
+
+- In-app notification
+- Updated policy date on this page
+
+Continued use of RemindToDeleteMedia after changes become effective constitutes your acceptance of the updated policy.
+
+---
+
+## Contact Us
+
+For privacy questions, data access requests, or account deletion:
+
+- **Email:** sudarshantechlabs@gmail.com
+- **Developer:** sunny.sudarshan@gmail.com
+- **Website:** https://sudarshantechlabs.com
+- **Response Time:** Within 48 hours
+
+---
+
+## Play Store Data Safety Summary
+
+| Data type | Collected | Shared | Purpose |
+|---|---|---|---|
+| Reminder configurations | Local only | No | App functionality |
+| Media file metadata | Runtime only, not stored | No | Reminder setup |
+
+---
+
+---
+
+**This privacy policy complies with:**
+- Google Play Store requirements
+- GDPR (General Data Protection Regulation)
+- CCPA (California Consumer Privacy Act)
+
+**Last reviewed:** 2026-03-21
