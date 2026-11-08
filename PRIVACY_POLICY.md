@@ -2,7 +2,7 @@
 
 **Effective Date:** 2026-03-21
 **Last Updated:** 2026-11-08
-**Version:** 1.0.1
+**Version:** 1.2.0
 
 Published by **Sudarshan Tech Labs** | https://sudarshantechlabs.com | sudarshantechlabs@gmail.com
 
@@ -163,6 +163,24 @@ For privacy questions:
 | Device or other IDs | No | No | — |
 
 Declare **"No data collected"** in the Play Console data safety form. The finished app has no network capability, so there is no transfer to disclose. Note that the broad media permissions require their own Play Console declaration of how they are used.
+
+---
+
+## Recent Updates (Version 1.2.0 - November 8, 2026)
+
+- **Rewrote the policy from the app's source,** replacing the shared template. The previous text claimed protection by "the browser, Firebase, Google, GitHub" and carried scaffold location sections; this app uses none of them and requests no location.
+- **Stated that the app never deletes your media.** For an app named RemindToDeleteMedia, holding photo and video permissions, a reader will assume otherwise and the old text never said. No deletion API is called anywhere, and no write or delete permission over media is requested.
+- **Stated that it reads folder metadata, not image content** — bucket name, date, size and path. The exception is thumbnails drawn in the preview screen for a folder you chose to preview, which are not copied or stored.
+- **Stated that nothing can leave the device.** No `INTERNET` permission in the finished build and no URL anywhere in the app's source.
+- **Documented the folder grant,** which goes through Android's Storage Access Framework on a folder you pick, not your whole library, and the JSON export, which contains your folder list and history but no media.
+- **Listed the five library-merged permissions** — `ACCESS_NETWORK_STATE`, `WAKE_LOCK`, `FOREGROUND_SERVICE` and `BIND_JOB_SERVICE` from WorkManager, and `DUMP` — since the app declares five while the Play Store shows ten.
+
+---
+
+## Recent Updates (Version 1.1.0 - May 17, 2026)
+
+- **Aligned policy with the shared privacy-policy structure.**
+- **Clarified folder/media metadata, local-only storage, permissions, and no automatic media deletion.**
 
 ---
 

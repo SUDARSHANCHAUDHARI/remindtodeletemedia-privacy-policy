@@ -29,7 +29,7 @@
   <main>
     <article>
       <h1>RemindToDeleteMedia — Privacy Policy</h1>
-      <p><strong>Effective Date:</strong> 2026-03-21 <strong>Last Updated:</strong> 2026-11-08 <strong>Version:</strong> 1.0.1</p>
+      <p><strong>Effective Date:</strong> 2026-03-21 <strong>Last Updated:</strong> 2026-11-08 <strong>Version:</strong> 1.2.0</p>
       <p>Published by <strong>Sudarshan Tech Labs</strong> | <a href="https://sudarshantechlabs.com">https://sudarshantechlabs.com</a> | sudarshantechlabs@gmail.com</p>
       <hr>
       <p>RemindToDeleteMedia helps you keep photo and video folders from quietly filling up, by letting you pick folders to track and reminding you to review them.</p>
@@ -143,6 +143,22 @@
       <tr><td>Device or other IDs</td><td>No</td><td>No</td><td>—</td></tr>
       </tbody></table>
       <p>Declare <strong>"No data collected"</strong> in the Play Console data safety form. The finished app has no network capability, so there is no transfer to disclose. Note that the broad media permissions require their own Play Console declaration of how they are used.</p>
+      <hr>
+      <h2>Recent Updates (Version 1.2.0 - November 8, 2026)</h2>
+      <ul>
+      <li><strong>Rewrote the policy from the app's source,</strong> replacing the shared template. The previous text claimed protection by "the browser, Firebase, Google, GitHub" and carried scaffold location sections; this app uses none of them and requests no location.</li>
+      <li><strong>Stated that the app never deletes your media.</strong> For an app named RemindToDeleteMedia, holding photo and video permissions, a reader will assume otherwise and the old text never said. No deletion API is called anywhere, and no write or delete permission over media is requested.</li>
+      <li><strong>Stated that it reads folder metadata, not image content</strong> — bucket name, date, size and path. The exception is thumbnails drawn in the preview screen for a folder you chose to preview, which are not copied or stored.</li>
+      <li><strong>Stated that nothing can leave the device.</strong> No <code>INTERNET</code> permission in the finished build and no URL anywhere in the app's source.</li>
+      <li><strong>Documented the folder grant,</strong> which goes through Android's Storage Access Framework on a folder you pick, not your whole library, and the JSON export, which contains your folder list and history but no media.</li>
+      <li><strong>Listed the five library-merged permissions</strong> — <code>ACCESS_NETWORK_STATE</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code> and <code>BIND_JOB_SERVICE</code> from WorkManager, and <code>DUMP</code> — since the app declares five while the Play Store shows ten.</li>
+      </ul>
+      <hr>
+      <h2>Recent Updates (Version 1.1.0 - May 17, 2026)</h2>
+      <ul>
+      <li><strong>Aligned policy with the shared privacy-policy structure.</strong></li>
+      <li><strong>Clarified folder/media metadata, local-only storage, permissions, and no automatic media deletion.</strong></li>
+      </ul>
       <hr>
       <p><strong>This privacy policy complies with:</strong></p>
       <ul>
