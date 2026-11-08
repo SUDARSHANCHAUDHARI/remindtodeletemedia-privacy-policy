@@ -1,210 +1,178 @@
-# RemindToDeleteMedia Privacy Policy
+# RemindToDeleteMedia — Privacy Policy
 
-**Effective Date:** May 17, 2026
-_Last updated: May 17, 2026_
-**Version:** 1.1.0
+**Effective Date:** 2026-03-21
+**Last Updated:** 2026-11-08
+**Version:** 1.0.1
 
-RemindToDeleteMedia ("we," "our," or "us") is an Android app. RemindToDeleteMedia is an Android reminder app that helps you review media folders and manually delete media you no longer need. This Privacy Policy explains what information the app collects, how it is used, and the choices you have. By installing or using RemindToDeleteMedia you agree to the practices described below.
+Published by **Sudarshan Tech Labs** | https://sudarshantechlabs.com | sudarshantechlabs@gmail.com
 
-## Information We Collect
+---
 
-### Location Data
-- RemindToDeleteMedia does not collect location data.
+RemindToDeleteMedia helps you keep photo and video folders from quietly filling up, by letting you pick folders to track and reminding you to review them.
 
-### Account Information
-- No account is required to use RemindToDeleteMedia.
+To do that it needs access to your photos and videos, which is sensitive. Three things are worth knowing up front, and all three are verifiable in the source:
 
-### Device Information
-- Selected folder paths or identifiers, folder names, reminder dates, media counts, folder sizes, reminder status, and preferences may be stored locally.
+1. **Nothing leaves your device.** The App has no `INTERNET` permission, so it is incapable of uploading your media or anything about it.
+2. **The App never deletes your photos or videos.** It contains no media-deletion code at all. It reminds you, and you delete what you want to delete yourself, in your own gallery or file manager.
+3. **It reads folder information, not your images.** What it stores is folder names, file counts, sizes and dates — never the contents of a photo.
 
-## How We Use Your Information
+Sudarshan Tech Labs operates no backend server and receives nothing from the App.
 
-### Location Sharing
-- RemindToDeleteMedia does not use your location.
+---
 
-### Account Management
-- Scan selected media locations, schedule review reminders, and help you manually manage media.
-- The app never deletes media automatically.
+## Data Collection
 
-### Service Improvement
-- Improve local reminder and folder-scanning workflows.
-- We do not sell, rent, or monetize your media metadata.
+### What the App reads from your media
 
-## Storage and Retention
+| Data | Why |
+|---|---|
+| Folder names (the MediaStore "bucket") | So you can choose which folders to track and see them listed |
+| File counts, file sizes and dates | To show how much a folder has grown since you last reviewed it |
+| Relative paths | To identify a folder across sessions |
 
-### Data Storage
-- Folder reminder metadata and preferences are stored locally using on-device storage such as Room/DataStore.
-- Media content remains on your device and is accessed only through Android media/file permissions or the system picker.
+These come from Android's MediaStore index. The App queries the metadata columns only — bucket, date, size and path.
 
-### Data Retention
-- Local reminder data remains until you delete it, clear app data, or uninstall the app.
-- Media files remain wherever they are stored until you manually delete them.
+### When your images are displayed
 
-### Data Security
-- Data is protected using platform security controls available on Android, the browser, Firebase, Google, GitHub, or other services named in this policy.
-- Local data remains on your device or browser unless a feature you use requires a named third-party service.
-- Network communication uses HTTPS/TLS where applicable.
-- You should protect your device, browser profile, and Google/GitHub accounts with strong authentication.
+The folder preview screen shows thumbnails of the photos in a folder you chose to preview, so you can see what is in it. Those images are read from your device and drawn on your screen. They are **not copied, uploaded, or stored anywhere by the App**.
+
+### Data stored locally on your device
+
+A Room database inside the App's private directory, holding three things: the folders you have chosen to track, your reminders for them, and your reminder history. Plus your preferences.
+
+There is no account, no sign-in, no identifier, no analytics and no advertising.
+
+---
+
+## How You Grant Access
+
+You choose the folders. The App opens Android's own folder picker, and Android grants it access to the folder you select — not to your whole library. That grant is recorded by Android and is revocable.
+
+---
+
+## How We Use Your Data
+
+We do not use it, because we never receive it. Everything the App reads and stores is used only to show your tracked folders and send your reminders.
+
+---
+
+## Data Storage and Security
+
+- **All data is stored locally** in a Room database inside the App's private directory, protected by Android's application sandbox
+- **No transmission is possible:** the finished app declares no `INTERNET` permission, and contains no HTTP client, no Firebase, and no analytics or crash-reporting SDK
+- **No cloud storage:** Sudarshan Tech Labs operates no backend server
+
+## Data Retention
+
+| Data | Retention |
+|---|---|
+| Tracked folders and settings | Until you remove them, clear app data, or uninstall the App |
+| Media metadata | Not retained beyond what is shown to you; cleared with app data |
+
+---
+
+## Export and Backup
+
+You can export your tracked-folder list and history to a file you choose. The file is written as JSON to the location you pick, on your device or wherever you point the picker. It contains your folder list and reminder history — no media. Nothing is sent anywhere.
+
+---
 
 ## Data Sharing
 
-### Family Groups
-- RemindToDeleteMedia does not use family groups unless explicitly described in this policy.
-- If this app includes pairing, sharing, or collaboration features, data is shared only with the people or services required for the feature you choose.
-- You control feature use through the app settings, permissions, account controls, or platform settings.
+Nothing is shared. We do not sell user data. Your folder names, your media metadata and your images never leave your device.
 
-### Third Parties
-- No media files, folder paths, or reminder data are shared with third parties by Sudarshan Tech Labs.
+The App can open your browser at this project's GitHub page or its Play Store listing if you tap those links. That hands the request to your browser or the Play Store app; the App itself sends nothing.
 
-We do **not** share your data with:
-- Data brokers
-- Unrelated advertising networks, unless advertising is explicitly listed above for this app
-- Third parties unrelated to the app features described in this policy
+---
 
-## Permissions Used
+## Permissions Explained
 
-### Required Permissions
+The App itself asks for five permissions:
 
-* **READ_MEDIA_IMAGES and READ_MEDIA_VIDEO**: Used to inspect selected media folders on modern Android versions.
-* **READ_EXTERNAL_STORAGE on older Android versions**: Used for legacy media access.
-* **POST_NOTIFICATIONS and RECEIVE_BOOT_COMPLETED**: Used for reminders and restoring reminders after restart.
+| Permission | Why It Is Needed |
+|---|---|
+| `READ_MEDIA_IMAGES` | Read photo folder information, and show thumbnails in the preview screen (Android 13 and later) |
+| `READ_MEDIA_VIDEO` | The same, for video folders (Android 13 and later) |
+| `READ_EXTERNAL_STORAGE` | The equivalent on Android 12 and earlier, which had no split media permissions |
+| `POST_NOTIFICATIONS` | Deliver your folder-review reminders |
+| `RECEIVE_BOOT_COMPLETED` | Reschedule your reminders after the device restarts |
 
-### Optional Permissions
+The App asks for **no write or delete permission over your media**, which is why it cannot remove anything itself.
 
-* Media access and notifications are controlled by you through Android settings and the system folder picker.
+### Permissions added by Android libraries
+
+The finished app carries five more, declared by the Android libraries it is built on rather than by the App's own code. They still appear in the permission list you see on the Play Store:
+
+| Permission | Comes from | What it does |
+|---|---|---|
+| `ACCESS_NETWORK_STATE` | WorkManager | Lets a library check whether a network exists. It does **not** grant network access, and without `INTERNET` nothing can be sent |
+| `WAKE_LOCK`, `FOREGROUND_SERVICE`, `BIND_JOB_SERVICE` | WorkManager | How Android runs and re-registers the scheduled folder checks |
+| `DUMP` | a build-time library | Diagnostic permission. Android grants it only to system apps, so it has no effect here |
+
+**`INTERNET` is absent from the finished app.** Verified against the merged manifest, not just the App's own file.
+
+---
 
 ## Your Rights and Controls
 
-### Location Sharing Control
-- No location sharing exists in RemindToDeleteMedia.
+- **Revoke media access:** Android Settings → Apps → RemindToDeleteMedia → Permissions. The App can no longer read folder information
+- **Stop tracking a folder:** remove it in the App. That deletes the tracking record only; your photos are untouched
+- **Turn reminders off:** in the App's settings
+- **Delete all data:** uninstall the App, or go to Android Settings → Apps → RemindToDeleteMedia → Storage → Clear Data
 
-### Account Management
-- No account is required.
+Because your data exists only on your device and we hold no copy, a data access or deletion request to us would return nothing — you already have the only copy.
 
-### Data Access
-- You can view, edit, or delete folder reminders in the app, revoke media permissions, or clear app data.
-
-### GDPR Rights (EU Users)
-If you are in the European Union, you have additional rights:
-- **Right to Access**: Request a copy of your personal data
-- **Right to Rectification**: Correct inaccurate data
-- **Right to Erasure**: Request deletion of your data
-- **Right to Restrict Processing**: Limit how we use your data
-- **Right to Data Portability**: Receive your data in a portable format
-- **Right to Object**: Object to certain types of processing
-
-To exercise these rights, contact us using the methods in the Contact Us section.
-
-### Permissions
-- You can revoke Android permissions in Android Settings -> Apps -> RemindToDeleteMedia -> Permissions.
-- Browser permissions and storage can be managed in your browser site settings for web apps.
-- Revoking required permissions may prevent related features from functioning.
+---
 
 ## Children's Privacy
 
-- Our app is **not intended for children under 13**.
-- We do not knowingly collect data from children under 13.
-- If you are a parent or guardian and believe your child has provided personal information, please contact us to request deletion.
-- Parents and guardians should supervise children's use of apps that store personal content.
+RemindToDeleteMedia is not directed at children under 13. We collect no personal information from anyone.
 
-## Security
-
-- Local data is protected by Android, browser, or operating-system app sandboxing.
-- Network communication uses HTTPS/TLS where applicable.
-- Third-party services named in this policy provide their own security controls and privacy policies.
-- You are responsible for protecting your device, browser profile, and account credentials.
-- We do not sell your personal data.
+---
 
 ## Changes to This Policy
 
-We may update this Privacy Policy to reflect new features, legal requirements, or changes in our practices. Significant changes will be:
-- Noted in the app release notes or repository when applicable
-- Reflected with a new "Last updated" date
-- Communicated in the app or project page if the change is significant
+We may update this Privacy Policy from time to time. We will notify you of significant changes via:
 
-The "Last updated" date at the top of this policy indicates when revisions occurred. Continued use of the app after changes constitutes acceptance of the updated policy.
+- In-app notification
+- Updated policy date on this page
+
+Continued use of RemindToDeleteMedia after changes become effective constitutes your acceptance of the updated policy.
+
+---
 
 ## Contact Us
 
-If you have questions about this Privacy Policy, wish to request data deletion, or have privacy concerns:
+For privacy questions:
 
-* **GitHub Repository:** https://github.com/SUDARSHANCHAUDHARI/remindtodeletemedia-privacy-policy
-* **Email:** sunny.sudarshan@gmail.com
-* **Main App Repository:** https://github.com/SUDARSHANCHAUDHARI/RemindToDeleteMedia
-
-We will respond as quickly as possible, typically within 48 hours.
-
-## Data Deletion
-
-### How to Delete Your Account:
-This app does not require an account. You can delete local app data using the options below:
-
-#### Option 1: In-App Deletion
-1. Open RemindToDeleteMedia
-2. Delete individual entries, reminders, history, or settings where the app provides controls
-3. Or use Android/browser settings to clear app/site data
-4. Uninstalling the app also removes local app-private data
-
-#### Option 2: Email Deletion Request
-Send an email to: **support@sudarshantechlabs.com** or **sunny.sudarshan@gmail.com**
-- Subject: "Data Deletion Request - RemindToDeleteMedia"
-- Include: The email/account identifier used in the app, if any
-- We will process deletion requests as quickly as possible, typically within 48 hours for acknowledgement
-
-#### Option 3: Web Deletion
-1. Visit the privacy policy website for contact and support information
-2. For browser apps, clear browser storage for the site
-3. For Android apps, clear storage from Android Settings if you want a full local reset
-
-### What Gets Deleted:
-- Local app data stored by the app
-- Local preferences and reminder/history records
-- Cached data controlled by the app or browser
-- Exported/shared files only if you delete them from where you saved them
-
-### Data Retention After Deletion:
-- **Immediate:** clearing app/site data removes local app-private data from your device/browser
-- **Uninstall:** removes app-private local data from Android apps
-- **Exports/shared files:** remain wherever you saved or sent them until you delete them
-
-To request deletion of your data:
-
-1. Open RemindToDeleteMedia, if installed
-2. Delete local content or clear app/site data where applicable
-3. Contact support via email: sunny.sudarshan@gmail.com
-4. Request account/data deletion and include enough detail for us to identify the app and any account, if one exists
-5. We will confirm what data can be deleted and complete the request according to the retention terms above
-
-## Firebase and Google Services
-
-This app may use the following services depending on the features you enable and the installed version:
-
-- No third-party cloud service is required for core media-reminder behavior.
-
-Please review relevant third-party privacy policies:
-
-- [Google Privacy Policy](https://policies.google.com/privacy)
-- [Firebase Privacy Policy](https://firebase.google.com/support/privacy)
-- [Google Play Terms](https://play.google.com/about/play-terms/)
-- [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement)
-
-## About RemindToDeleteMedia
-
-RemindToDeleteMedia is built with privacy in mind. The app is built with:
-- Kotlin and Jetpack Compose
-- Room/DataStore for local reminder data
-- Android MediaStore and Storage Access Framework
-- Android notifications and boot restore
-
-The app collects only the data needed for the features described in this policy, and local-first features keep data on your device whenever possible.
+- **Email:** sudarshantechlabs@gmail.com
+- **Developer:** sunny.sudarshan@gmail.com
+- **Website:** https://sudarshantechlabs.com
+- **Response Time:** Within 48 hours
 
 ---
 
-**Last Updated:** May 17, 2026
+## Play Store Data Safety Summary
+
+| Data type | Collected | Shared | Purpose |
+|---|---|---|---|
+| Photos and videos | Accessed on device, never collected or uploaded | No | App functionality |
+| Files and docs (folder metadata) | Read on device, never collected | No | App functionality |
+| Personal info | No | No | — |
+| Crash logs | No | No | — |
+| Device or other IDs | No | No | — |
+
+Declare **"No data collected"** in the Play Console data safety form. The finished app has no network capability, so there is no transfer to disclose. Note that the broad media permissions require their own Play Console declaration of how they are used.
 
 ---
 
-## Recent Updates (Version 1.1.0 - May 17, 2026)
+**This privacy policy complies with:**
+- Google Play Store requirements
+- GDPR (General Data Protection Regulation)
+- CCPA (California Consumer Privacy Act)
 
-- **Aligned policy with the shared privacy-policy structure.**
-- **Clarified folder/media metadata, local-only storage, permissions, and no automatic media deletion.**
+**Last reviewed:** 2026-11-08
+
+---
+
+This is the published policy, served at https://sudarshanchaudhari.github.io/remindtodeletemedia-privacy-policy/ from the `main` branch of this repository. `index.html` carries the same content for the web and must be updated alongside this file. The copy in the [RemindToDeleteMedia app repository](https://github.com/SUDARSHANCHAUDHARI/RemindToDeleteMedia/blob/main/PRIVACY_POLICY.md) is kept identical.
